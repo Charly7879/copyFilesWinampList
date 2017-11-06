@@ -36,8 +36,6 @@ namespace WinampCopyFavoriteFiles
         {
             try
             {
-                //form.btnStart.Enabled = false;
-
                 foreach (String file in listFiles)
                 {
                     fileName = Path.GetFileName(@file);
@@ -66,7 +64,7 @@ namespace WinampCopyFavoriteFiles
 
                 if (countFiles == 0)
                 {
-                    MessageBox.Show("Los archivos han sido copiados correctamente.", "Copia finalizada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("The files have been copied successfully.", "Copy completed", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                     if (form.InvokeRequired)
                     {
@@ -85,8 +83,7 @@ namespace WinampCopyFavoriteFiles
             }
             catch (Exception e)
             {
-                MessageBox.Show("El proceso ha fallado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //form.btnStart.Enabled = true;
+                MessageBox.Show("The process has failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
