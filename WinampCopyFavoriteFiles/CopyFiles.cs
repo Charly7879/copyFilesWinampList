@@ -19,8 +19,14 @@ namespace WinampCopyFavoriteFiles
         int countFiles;
         List<string> listFiles;
 
-        public Thread MyThread { get => myThread; set => myThread = value; }
+        /** Getter and Setter */
+        public Thread MyThread
+        {
+            get { return myThread; }
+            set { myThread = value; }
+        }
 
+        /** CopyFiles Constructor */
         public CopyFiles(Form1 form)
         {
             this.form = form;

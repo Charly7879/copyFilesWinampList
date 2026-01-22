@@ -21,10 +21,26 @@ namespace WinampCopyFavoriteFiles
         String[] lines;
         BackgroundWorker tarea = new BackgroundWorker();
 
-        public List<string> ListFiles { get => ListFiles1; set => ListFiles1 = value; }
-        public string TargetFiles { get => targetFiles; set => targetFiles = value; }
-        public List<string> ListFiles1 { get => listFiles; set => listFiles = value; }
+        /** Getter and Setter */
+        public List<string> ListFiles
+        {
+            get { return ListFiles1; }
+            set { ListFiles1 = value; }
+        }
 
+        public string TargetFiles
+        {
+            get { return targetFiles; }
+            set { targetFiles = value; }
+        }
+
+        public List<string> ListFiles1
+        {
+            get { return listFiles; }
+            set { listFiles = value; }
+        }
+
+        /** Form1 Constructor */
         public Form1()
         {
             
