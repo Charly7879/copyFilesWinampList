@@ -46,7 +46,15 @@ namespace WinampCopyFavoriteFiles
                 {
                     fileName = Path.GetFileName(@file);
                     fileCopy = Path.Combine(targetFiles, fileName);
-                    File.Copy(file, fileCopy, true);
+
+                    if (File.Exists(file))
+                    {
+                        File.Copy(file, fileCopy, true);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"File not found : {fileName}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                    
 
                     if(form.InvokeRequired)
                     {
@@ -82,6 +90,7 @@ namespace WinampCopyFavoriteFiles
                         }
                         catch (Exception e)
                         {
+                            Console.WriteLine(e.ToString());
                             Thread.CurrentThread.Interrupt();
                         }
                     }
@@ -89,6 +98,7 @@ namespace WinampCopyFavoriteFiles
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 MessageBox.Show("The process has failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
